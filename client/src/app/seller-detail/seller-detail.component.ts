@@ -17,20 +17,20 @@ export class SellerDetailComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    var successHandler = (result) => {
+    const successHandler = (result) => {
       this.seller = result;
-    }
-    var errorHandler = (err) => {
-      //TODO: display toastr!
-      console.log("Something failed");
-    }
+    };
+
+    const errorHandler = (err) => {
+      // TODO: display toastr!
+      console.log('Something failed');
+    };
 
     this.sellerId = this.route.snapshot.params['sellerId'];
 
-    this.service.getSellerById(this.sellerId).subscribe(result => {
-      this.seller = result;
-    });
-    
+    this.service.getSellerById(this.sellerId).subscribe(successHandler, errorHandler);
+
+
   }
 
   onGoBack() {

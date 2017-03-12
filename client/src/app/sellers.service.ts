@@ -23,7 +23,7 @@ export class SellersService {
   }
 
   getSellerById(id: number): Observable<Seller> {
-    //Cant get ${id} to work, but this should not be hardcoded to 2
+    // Cant get ${id} to work, but this should not be hardcoded to 2
     return this.http.get('http://localhost:5000/api/sellers/2/')
     .map(response => {
       return <Seller> response.json();

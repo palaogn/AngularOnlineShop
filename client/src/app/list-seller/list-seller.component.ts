@@ -15,13 +15,14 @@ export class ListSellerComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    var successHandler = (result) => {
+    const successHandler = (result) => {
       this.sellers = result;
-    }
-    var errorHandler = (err) => {
-      //TODO: display toastr!
-      console.log("Something failed");
-    }
+    };
+
+    const errorHandler = (err) => {
+      // TODO: display toastr!
+      console.log('Something failed');
+    };
 
     this.service.getSellers().subscribe(result => {
       this.sellers = result;
