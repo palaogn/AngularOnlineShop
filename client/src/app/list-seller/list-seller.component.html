@@ -1,7 +1,16 @@
 
-<h2>All sellers:</h2>
-<ul>
-  <li *ngFor="let s of sellers">
-    <a (click)=onClickOnSeller(s.id)>{{s.name}}</a>
-  </li>
-</ul>
+<h2>Söluaðilar</h2>
+
+<div style="width:80%">
+
+  <table style="width:80%">
+      <tr>
+        <th>Nafn seljanda</th>
+        <th>Flokkur</th>
+      </tr>
+      <tr *ngFor="let s of sellers">
+        <td><a (click)=onClickOnSeller(s.id)>{{s.name}}</a></td>
+        <td>{{s.category}}</td>
+      </tr>
+  </table>
+</div>
