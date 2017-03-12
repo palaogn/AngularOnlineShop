@@ -1,0 +1,7 @@
+
+<h2>All sellers:</h2>
+<ul>
+  <li *ngFor="let s of sellers">
+    <a (click)=onClickOnSeller(s.id)>{{s.name}}</a>
+  </li>
+</ul>
