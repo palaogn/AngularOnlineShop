@@ -1,3 +1,17 @@
 <h1>
   {{title}}
 </h1>
+
+<h2>All sellers:</h2>
+<ul>
+  <li *ngFor="let s of sellers">
+    {{s.name}}
+  </li>
+</ul>
+
+<h2>Seller nr.2</h2>
+<!---Þarf að vera ngIf, því það tekur smá tíma að sækja og annars kastar hann villu -->
+<div *ngIf="seller">
+  <h3>{{seller.name}}</h3>
+  <img src="{{seller.imagePath}}" alt="Image of seller" />
+</div>
