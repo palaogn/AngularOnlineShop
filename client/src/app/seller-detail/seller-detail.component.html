@@ -1,23 +1,26 @@
+<div class="container" *ngIf="seller">
+	<div class="row">
+		<div class="col-xs-18 col-sm-4 col-md-3">
+			<div class="productbox">
+				<div class="imgthumb img-responsive">
+          <img src="{{seller.imagePath}}" alt="Image of seller" />
+				</div>
+				<div class="caption">
+					<h5>{{seller.category}}, <br>{{seller.name}}</h5>
+					<a (click)=onClickOnEditSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Edit</a> 
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
 
 <button (click)="onGoBack()">Back to Sellers</button>
 
-<!---Þarf að vera ngIf, því það tekur smá tíma að sækja og annars kastar hann villu -->
-<div *ngIf="seller">
-    <img src="{{seller.imagePath}}" alt="Image of seller" />
-    <p><b>Nafn: </b> {{seller.name}}</p>
-    <p><b>Flokkur: </b> {{seller.category}}</p>
+
+<!---TODO! This shall be abstracted into product card and rendered here
+<div *ngFor="let p of products">
+  <p>{{p.name}}</p>
+  <p>{{p.price}}</p>
 </div>
 
-
-<!---TODO! This shall be abstracted into product card and rendered here-->
-<div class="col-12 col-md-3 push-md-9"> <p> hahaha</p></div>
-<table style="width:80%">
-    <tr>
-      <th>Vörur</th>
-      <th>Flokkur</th>
-    </tr>
-    <tr *ngFor="let p of products">
-      <td>{{p.name}}</td>
-      <td>{{p.price}}</td>
-    </tr>
-</table>
+!-->

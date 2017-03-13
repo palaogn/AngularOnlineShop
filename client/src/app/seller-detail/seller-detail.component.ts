@@ -39,6 +39,10 @@ export class SellerDetailComponent implements OnInit {
 
   }
 
+  onClickOnEditSeller(sellerId) {
+    this.router.navigate(['edit', sellerId]);
+  }
+
   onGoBack() {
     this.router.navigate(['/sellers']);
   }
