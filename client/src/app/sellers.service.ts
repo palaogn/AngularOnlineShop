@@ -10,6 +10,15 @@ export interface Seller {
   imagePath: string;
 }
 
+export interface Product {
+  id: number,
+  name: string,
+  price: number,
+  quantitySold: number,
+  quantityInStock: number,
+  imagePath: string
+}
+
 @Injectable()
 export class SellersService {
 
@@ -23,10 +32,18 @@ export class SellersService {
   }
 
   getSellerById(id: number): Observable<Seller> {
-    // Cant get ${id} to work, but this should not be hardcoded to 2
-    return this.http.get('http://localhost:5000/api/sellers/2/')
+    // Cant get ${id} to work, but this should not be hardcoded to 3
+    return this.http.get('http://localhost:5000/api/sellers/1/')
     .map(response => {
       return <Seller> response.json();
+    });
+  }
+
+  getProductsBySellerId(id: number): Observable<Product[]> {
+    // Cant get ${id} to work, but this should not be hardcoded to 3
+    return this.http.get('http://localhost:5000/api/sellers/1/products')
+    .map(response => {
+      return <Product[]> response.json();
     });
   }
 

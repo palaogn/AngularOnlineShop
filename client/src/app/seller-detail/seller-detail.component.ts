@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SellersService, Seller } from '../sellers.service';
+import { SellersService, Seller, Product } from '../sellers.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,6 +11,8 @@ export class SellerDetailComponent implements OnInit {
   sellerId: number;
   private sellers: Seller[];
   private seller: Seller;
+  private products: Product[];
+  private product: Product;
 
   constructor(private service: SellersService,
     private router: Router,
@@ -30,6 +32,9 @@ export class SellerDetailComponent implements OnInit {
 
     this.service.getSellerById(this.sellerId).subscribe(successHandler, errorHandler);
 
+    this.service.getProductsBySellerId(this.sellerId).subscribe(result => {
+      this.products = result;
+    });
 
   }
 

@@ -15,3 +15,14 @@
     </tr>
   </table>
 </div>
+
+<table style="width:80%">
+    <tr>
+      <th>Vörur</th>
+      <th>Flokkur</th>
+    </tr>
+    <tr *ngFor="let p of products">
+      <td>{{p.name}}</td>
+      <td>{{p.price}}</td>
+    </tr>
+</table>
