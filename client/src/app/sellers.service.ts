@@ -33,7 +33,7 @@ export class SellersService {
 
   getSellerById(id: number): Observable<Seller> {
     // Cant get ${id} to work, but this should not be hardcoded to 3
-    return this.http.get('http://localhost:5000/api/sellers/1/')
+    return this.http.get(`http://localhost:5000/api/sellers/${id}/`)
     .map(response => {
       return <Seller> response.json();
     });
@@ -41,7 +41,7 @@ export class SellersService {
 
   getProductsBySellerId(id: number): Observable<Product[]> {
     // Cant get ${id} to work, but this should not be hardcoded to 3
-    return this.http.get('http://localhost:5000/api/sellers/1/products')
+    return this.http.get(`http://localhost:5000/api/sellers/1/products/${id}/`)
     .map(response => {
       return <Product[]> response.json();
     });
