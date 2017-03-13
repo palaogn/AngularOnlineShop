@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SellersService, Seller, Product } from '../sellers.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-seller-detail',

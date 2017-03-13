@@ -3,19 +3,14 @@
 
 <!---Þarf að vera ngIf, því það tekur smá tíma að sækja og annars kastar hann villu -->
 <div *ngIf="seller">
-  <table>
-    <tr>
-      <td>
-        <img src="{{seller.imagePath}}" alt="Image of seller" />
-      </td>
-      <td>
-        <p><b>Nafn: </b> {{seller.name}}</p>
-        <p><b>Flokkur: </b> {{seller.category}}</p>
-      </td>
-    </tr>
-  </table>
+    <img src="{{seller.imagePath}}" alt="Image of seller" />
+    <p><b>Nafn: </b> {{seller.name}}</p>
+    <p><b>Flokkur: </b> {{seller.category}}</p>
 </div>
 
+
+<!---TODO! This shall be abstracted into product card and rendered here-->
+<div class="col-12 col-md-3 push-md-9"> <p> hahaha</p></div>
 <table style="width:80%">
     <tr>
       <th>Vörur</th>
