@@ -12,9 +12,6 @@ export class ProductCardComponent implements OnInit {
   @Input()
   product: Product;
   topTenProduct: Product;
-  productName: string;
-  productPrize: number;
-  productInStock: number;
 
 
   @Output()

@@ -50,6 +50,13 @@ export class SellersService {
     });
   }
 
+  postProduct(product: Product, sellerId: number): Observable<Product[]> {
+    return this.http.post(`http://localhost:5000/api/sellers/${sellerId}/products`, product)
+    .map(response => {
+      return <Product[]> response.json();
+    });
+  }
+
   getSellers(): Observable<Seller[]> {
     return this.http.get('http://localhost:5000/api/sellers')
     .map(response => {
