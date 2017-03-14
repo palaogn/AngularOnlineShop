@@ -1,62 +1,51 @@
- <div class="container" *ngIf="seller">
-	<div class="row">
-    <div class="imgthumb img-responsive">
-      <div class="col-md-4">
-        <img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
-      </div>
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-2">
-            <p><b>Söluaðili:</b></p>
-          </div>
-          <div class="col-md-4">
-            <p>{{seller.name}}</p>
-          </div>
-          <div class="col-md-4">
-					  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" >
-              <i class="glyphicon"></i>Bæta við söluaðila</a>
-					  <a class="btn btn-default btn-xs pull-right" data-toggle="modal" data-target="#edit-seller" role="button" >
-              <i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-            <p><b>Vöruflokkur:</b></p>
-          </div>
-          <div class="col-md-4">
-           <p>{{seller.category}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-		<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
-  </div>
-	<!---
 <div class="container">
+	<div class="top-buttons">
+		<button class="btn btn-default" (click)="onGoBack()">Til baka</button>
+		<button class="btn btn-change" data-toggle="modal" data-target="#edit-seller" role="button" >
+			<i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</button>
+	</div>
 	<div *ngIf="seller">
-		<div>
-			<img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
-			<p><b>Söluaðili: </b>{{seller.name}}</p> <br>
-			<p><b>Vöruflokkur:</b>{{seller.category}}</p> <br>
-			<a (click)=onClickOnAddSeller(seller.id) class="btn btn-default" role="button" >
-				<i class="glyphicon"></i>Bæta við söluaðila</a> <br>
-			<a class="btn btn-default" data-toggle="modal" data-target="#edit-seller" role="button" >
-				<i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</a>
-			<br>
-			<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
-		</div>
-</div> --->
-
-	<div class="container-fluid">
-			<h2>Allar Vörur</h2>
-			<div *ngFor="let p of products">
-	  	 	 <app-product-card
-				 		[product]="p"
-						(productUpdated)="onProductEdited($event)"
-				 ></app-product-card>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
+				</div>
+				<div class="col-md-4">
+					<p><b>Söluaðili: </b>{{seller.name}}</p> <br>
+					<p><b>Vöruflokkur:</b>{{seller.category}}</p> <br>
+					<br>
+				</div>
 			</div>
+		</div>
+</div>
+
+	<div class="tab">
+		<ngb-tabset #t="ngbTabset">
+		  <ngb-tab title="Allar vörur" id="fallProducts">
+		    <template ngbTabContent>
+					<div class="container-fluid">
+							<h2>Allar Vörur</h2>
+							<div *ngFor="let p of products">
+					  	 	 <app-product-card
+								 		[product]="p"
+										(productUpdated)="onProductEdited($event)"
+								 ></app-product-card>
+							</div>
+					</div>
+		    </template>
+		  </ngb-tab>
+		  <ngb-tab title="Topp 10" id="topTenProducts">
+		    <template ngbTabTitle></template>
+		    <template ngbTabContent>Topp 10 .....
+
+
+
+		    </template>
+		  </ngb-tab>
+		</ngb-tabset>
 	</div>
 </div>
+
 
 <div class="modal fade" id="edit-seller" role="dialog">
   <div class="modal-dialog">
