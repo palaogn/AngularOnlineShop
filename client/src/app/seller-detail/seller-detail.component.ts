@@ -72,7 +72,7 @@ editSeller() {
 
   onAddProduct() {
     const modalInstance = this.modalService.open(ProductDlgComponent);
-    modalInstance.componentInstance.productName = 'ff';
+    modalInstance.componentInstance.productName = '';
     modalInstance.componentInstance.sellerId = this.sellerId;
     modalInstance.result.then(obj => {
         console.log("Dialog was closed OK");
@@ -95,9 +95,25 @@ editSeller() {
   }
 
   onProductEdited(p: Product) {
-    console.log(p);
     this.service.updateProduct(this.sellerId, p).subscribe(succeeded => {
     });
   }
+
+  onAddSeller() {
+    const modalInstance = this.modalService.open(EditSellerDlgComponent);
+    modalInstance.componentInstance.sellerName = this.seller.name;
+    modalInstance.componentInstance.sellerCategory = this.seller.category;
+    modalInstance.componentInstance.sellerImage = this.seller.imagePath;
+    modalInstance.componentInstance.sellerId = this.sellerId;
+    modalInstance.result.then(obj => {
+        console.log("Dialog was closed OK");
+        console.log(obj);
+    }).catch(err => {
+        console.log("Dialog was cancelled.");
+        console.log(err);
+    });
+  }
+
+
 
 }

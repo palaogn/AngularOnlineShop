@@ -1,10 +1,8 @@
 <div class="modal-dialog">
-  <p>hello from the edit dialog</p>
-  <!-- Modal content-->
-  <!--<div class="modal-content">
+  <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Edit Seller</h4>
+      <h4 class="modal-title">Breyta Söluaðila</h4>
     </div>
     <div class="modal-body">
       <div class="container">
@@ -14,7 +12,7 @@
               <p><b>Nafn söluaðila:</b></p>
             </div>
             <div class="col-md-4">
-              <input name="sellerName" [(ngModel)]="sellerName" type="text" placeholder=""/>
+              <input name="sellerName" [(ngModel)]="sellerName" type="text"/>
             </div>
           </div>
           <div class="row">
@@ -22,7 +20,15 @@
               <p><b>Nafn vöruflokks:</b></p>
             </div>
             <div class="col-md-4">
-              <input name="categoryName" [(ngModel)]="categoryName" type="text" placeholder=""/>
+              <input name="categoryName" [(ngModel)]="categoryName" type="text" placeholder=''/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><b>Mynda url:</b></p>
+            </div>
+            <div class="col-md-4">
+              <input name="sellerImage" [(ngModel)]="sellerImage" type="text" placeholder=''/>
             </div>
           </div>
         </div>
@@ -33,48 +39,4 @@
       <button (click)=onGoBack() type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
   </div>
-
-  TODO: USE THIS
-<div class="modal fade" id="edit-seller" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Seller</h4>
-      </div>
-      <div class="modal-body">
-        <div class="container" *ngIf="seller">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-2">
-                <p><b>Nýtt nafn söluaðila:</b></p>
-              </div>
-              <div class="col-md-4">
-                <input name="newNameForSeller" [(ngModel)]="newNameForSeller" type="text" placeholder={{seller.name}}/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-2">
-                <p><b>Nýtt nafn vöruflokks:</b></p>
-              </div>
-              <div class="col-md-4">
-                <input name="newCategoryForSeller" [(ngModel)]="newCategoryForSeller" type="text" placeholder={{seller.category}}/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button (click)=onClickSaveNewSellerInfo(newCategoryForProduct) type="button" class="btn btn-default" data-dismiss="modal">Vista breytingar</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
 </div>
-
-
-  !-->
-</div>
-
-
-

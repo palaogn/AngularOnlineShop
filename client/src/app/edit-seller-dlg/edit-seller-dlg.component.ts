@@ -11,8 +11,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class EditSellerDlgComponent implements OnInit {
 
   private seller: Seller;
-  private newNameForSeller: string;
-  private newCategoryForSeller: string;
+  //private newNameForSeller: string;
+  //private newCategoryForSeller: string;
+  private sellerName: string
+  private categoryName: string;
+  private sellerImage: string;
+  private sellerId: number;
 
 
   constructor(private service: SellersService,
@@ -23,14 +27,15 @@ export class EditSellerDlgComponent implements OnInit {
       this.seller = {id: undefined, name: "", category: "", imagePath: ""}
   }
 
-  //onClickSaveNewSeller() {
-  //    this.seller.name = this.sellerName;
-  //    this.seller.category = this.categoryName;
-	//	  this.seller.imagePath = "http://i.imgur.com/D5vdjTY.png";
-  //    this.service.postSeller(this.seller).subscribe(succeeded => {
-  //        this.modalService.close();
-  //    });
-  //}
+  onClickSaveNewSeller() {
+      this.seller.name = this.sellerName;
+      this.seller.category = this.categoryName;
+		  this.seller.imagePath = this.sellerImage;
+      this.service.updateSeller(this.sellerId, this.seller).subscribe(succeeded => {
+          this.modalService.close();
+      });
+
+  }
   onGoBack() {
       this.modalService.dismiss();
   }

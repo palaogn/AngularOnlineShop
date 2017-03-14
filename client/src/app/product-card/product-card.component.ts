@@ -24,8 +24,8 @@ export class ProductCardComponent implements OnInit {
 
 
   onEditProduct() {
-    //this.product.name = "test";
-    //this.productUpdated.emit(this.product);
+    this.product.name = "test";
+    this.productUpdated.emit(this.product);
   }
 
 }
