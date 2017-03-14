@@ -9,7 +9,7 @@ import { SellersService, Seller } from './sellers.service';
 })
 
 export class AppComponent implements OnInit {
-  title = 'Online Shop!';
+  title = 'Litla hryllings búðin';
 
 
   constructor() {}
