@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="top-buttons">
 		<button class="btn btn-default" (click)="onGoBack()">Til baka</button>
-		<button class="btn btn-change" data-toggle="modal" data-target="#edit-seller" role="button" >
+		<button (click)="editSeller()" class="btn btn-change" data-toggle="modal" data-target="#edit-seller" role="button" >
 			<i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</button>
 	</div>
 	<div *ngIf="seller">
@@ -53,41 +53,4 @@
 	</div>
 </div>
 
-
-<div class="modal fade" id="edit-seller" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Edit Seller</h4>
-      </div>
-      <div class="modal-body">
-        <div class="container" *ngIf="seller">
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-2">
-                <p><b>Nýtt nafn söluaðila:</b></p>
-              </div>
-              <div class="col-md-4">
-                <input name="newNameForSeller" [(ngModel)]="newNameForSeller" type="text" placeholder={{seller.name}}/>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-2">
-                <p><b>Nýtt nafn vöruflokks:</b></p>
-              </div>
-              <div class="col-md-4">
-                <input name="newCategoryForSeller" [(ngModel)]="newCategoryForSeller" type="text" placeholder={{seller.category}}/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button (click)=onClickSaveNewSellerInfo(newCategoryForProduct) type="button" class="btn btn-default" data-dismiss="modal">Vista breytingar</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<template ngbModalContainer></template>
