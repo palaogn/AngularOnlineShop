@@ -11,6 +11,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input()
   product: Product;
+  topTenProduct: Product;
 
   @Output()
   productUpdated = new EventEmitter();
