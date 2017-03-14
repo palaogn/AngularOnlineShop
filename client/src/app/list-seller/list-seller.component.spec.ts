@@ -73,13 +73,26 @@ describe('ListSellerComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  describe("when sellers service returns", () => {
+    mockService.successGetSellers = true;
+    mockService.sellersList = [];
+
+    it("should display list of sellers", () => {
+      //TODO
+      const fixture = TestBed.createComponent(ListSellerComponent);
+      fixture.detectChanges();
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('h1').textContent).toContain('No sellers to be displayed.');
+    });
+
+  });
+
   //Failed
   /*describe("when sellers service returns", () => {
     mockService.successGetSellers = true;
     mockService.sellersList = [];
 
     it("should display a message indicating that no sellers are to be displayed", () => {
-      //TODO
       const fixture = TestBed.createComponent(ListSellerComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
