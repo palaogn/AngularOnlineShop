@@ -6,7 +6,7 @@ import { DebugElement } from '@angular/core';
 import { ListSellerComponent } from './list-seller.component';
 import { SellersService } from '../sellers.service';
 import { Router } from '@angular/router';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('ListSellerComponent', () => {
 
@@ -44,6 +44,9 @@ describe('ListSellerComponent', () => {
   var mockRouter = {
     navigate: jasmine.createSpy("navigate"),
   };
+  var mockNgbModal = {
+    open: jasmine.createSpy("open"),
+  };
 
   let component: ListSellerComponent;
   let fixture: ComponentFixture<ListSellerComponent>;
@@ -59,6 +62,9 @@ describe('ListSellerComponent', () => {
       },{
         provide: Router,
         useValue: mockRouter
+      },{
+        provide:NgbModal,
+        useValue: mockNgbModal
       }]
     })
     .compileComponents();
@@ -70,10 +76,10 @@ describe('ListSellerComponent', () => {
     fixture.detectChanges();
   });
 
-  //Failed
-  /*it('should create', () => {
+
+  it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 
   //Failed
   /*describe("when sellers service returns", () => {
