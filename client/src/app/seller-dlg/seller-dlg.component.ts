@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SellersService, Seller } from '../sellers.service';
-import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -15,7 +14,6 @@ export class SellerDlgComponent implements OnInit {
   private categoryName: string;
 
   constructor(private service: SellersService,
-              private router: Router,
               private modalService: NgbActiveModal) { }
 
   ngOnInit() {
