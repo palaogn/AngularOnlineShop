@@ -3,16 +3,16 @@
 		<div class="col-xs-18 col-sm-4 col-md-3">
 			<div class="productbox">
 				<div class="imgthumb img-responsive">
-          <img src="{{seller.imagePath}}" alt="Image of seller" />
+          <img src="{{seller.imagePath}}" alt="Image of seller" height="350px" width="350px"/>
 				</div>
 				<div class="caption">
-					<h5>{{seller.category}}, <br>{{seller.name}}</h5>
-					<a (click)=onClickOnEditSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Edit</a>
+					<h5><b>Nafn: </b>{{seller.name}} <br> <b>Flokkur: </b>{{seller.category}}</h5>
+					<a (click)=onClickOnEditSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Bæta við vöru</a>
 				</div>
 			</div>
 		</div>
   </div>
-	<button (click)="onGoBack()">Back to Sellers</button>
+	<button (click)="onGoBack()">Til baka</button>
 </div>
 
 
