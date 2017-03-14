@@ -1,5 +1,34 @@
 <div class="container" *ngIf="seller">
 	<div class="row">
+    <div class="imgthumb img-responsive">
+      <div class="col-md-4">
+        <img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-2">
+            <h4><b>Söluaðili:</b></h4>
+          </div>
+          <div class="col-md-4">
+            <h4>{{seller.name}}</h4>
+          </div>
+          <div class="col-md-4">
+            <!-- NOTE! glyphicon-edit er klasinn fyrir edit takka!-->
+					  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon"></i>Bæta við söluaðila</a> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <h4><b>Vöruflokkur:</b></h4>
+          </div>
+          <div class="col-md-4">
+           <h4>{{seller.category}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<!--<div class="row">
 		<div class="col-xs-18 col-sm-4 col-md-3">
 			<div class="productbox">
 				<div class="imgthumb img-responsive">
@@ -13,6 +42,7 @@
 		</div>
   </div>
 </div>
+!-->
 
 <button (click)="onGoBack()">Back to Sellers</button>
 
