@@ -14,3 +14,8 @@ table, th {
   border: 2px solid grey;
   border-collapse: collapse;
 }
+
+button {
+  float: right;
+  margin-bottom: 15px;
+}
