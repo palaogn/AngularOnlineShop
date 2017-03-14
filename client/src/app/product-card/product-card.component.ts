@@ -5,7 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
+
 export class ProductCardComponent implements OnInit {
+
+  product: string;
 
   constructor() { }
 
@@ -13,3 +16,12 @@ export class ProductCardComponent implements OnInit {
   }
 
 }
+
+/*
+@Component({
+    selector: 'app-product-card' ...})
+export class ProductCard {
+
+    @Input()
+    product: Product;
+} */

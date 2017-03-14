@@ -7,20 +7,21 @@
 				</div>
 				<div class="caption">
 					<h5>{{seller.category}}, <br>{{seller.name}}</h5>
-					<a (click)=onClickOnEditSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Edit</a> 
+					<a (click)=onClickOnEditSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Edit</a>
 				</div>
 			</div>
 		</div>
   </div>
+	<button (click)="onGoBack()">Back to Sellers</button>
 </div>
 
-<button (click)="onGoBack()">Back to Sellers</button>
 
 
-<!---TODO! This shall be abstracted into product card and rendered here
-<div *ngFor="let p of products">
-  <p>{{p.name}}</p>
-  <p>{{p.price}}</p>
+<!---
+<div class="container">
+	<h2>Products</h2>
+	<div *ngFor="let p of products">
+  	  <app-product-card [product]="p"></app-product-card>
+	</div>
 </div>
-
-!-->
+--->

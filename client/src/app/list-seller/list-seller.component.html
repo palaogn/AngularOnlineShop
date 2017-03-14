@@ -1,16 +1,17 @@
 
-<h2>Söluaðilar</h2>
-
-<div style="width:80%">
-
-  <table style="width:80%">
-      <tr>
-        <th>Nafn seljanda</th>
-        <th>Flokkur</th>
-      </tr>
-      <tr *ngFor="let s of sellers">
-        <td><a (click)=onClickOnSeller(s.id)>{{s.name}}</a></td>
-        <td>{{s.category}}</td>
-      </tr>
-  </table>
+<div class="container">
+  <div>
+    <h2>Söluaðilar</h2>
+    <button class="button">Bæta við seljanda</button>
+  </div>
+    <table style="width:100%">
+        <tr>
+          <th>Nafn seljanda</th>
+          <th>Flokkur</th>
+        </tr>
+        <tr *ngFor="let s of sellers">
+          <td><a (click)=onClickOnSeller(s.id)>{{s.name}}</a></td>
+          <td>{{s.category}}</td>
+        </tr>
+    </table>
 </div>
