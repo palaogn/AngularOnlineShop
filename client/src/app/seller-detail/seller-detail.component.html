@@ -1,42 +1,41 @@
 <div class="container">
-<div *ngIf="seller">
-	<div class="row">
-    <div class="imgthumb img-responsive">
-      <div class="col-md-4">
-        <img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
-      </div>
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-2">
-            <p><b>Söluaðili:</b></p>
-          </div>
-          <div class="col-md-4">
-            <p>{{seller.name}}</p>
-          </div>
-          <div class="col-md-4">
-            <!-- NOTE! glyphicon-edit er klasinn fyrir edit takka!-->
-					  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon"></i>Bæta við söluaðila</a>
-					  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-            <p><b>Vöruflokkur:</b></p>
-          </div>
-          <div class="col-md-4">
-           <p>{{seller.category}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-	<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
-
-
-<div class="container-fluid">
-		<h2>Allar Vörur</h2>
-		<div *ngFor="let p of products">
-  	 	 <app-product-card [product]="p"></app-product-card>
+	<div *ngIf="seller">
+		<div class="row">
+	    <div class="imgthumb img-responsive">
+	      <div class="col-md-4">
+	        <img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
+	      </div>
+	      <div class="col-md-8">
+	        <div class="row">
+	          <div class="col-md-2">
+	            <p><b>Söluaðili:</b></p>
+	          </div>
+	          <div class="col-md-4">
+	            <p>{{seller.name}}</p>
+	          </div>
+	          <div class="col-md-4">
+	            <!-- NOTE! glyphicon-edit er klasinn fyrir edit takka!-->
+						  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon"></i>Bæta við söluaðila</a>
+						  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" ><i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</a>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-md-2">
+	            <p><b>Vöruflokkur:</b></p>
+	          </div>
+	          <div class="col-md-4">
+	           <p>{{seller.category}}</p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+			<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
 		</div>
-</div>
+	</div>
+	<div class="container-fluid">
+			<h2>Allar Vörur</h2>
+			<div *ngFor="let p of products">
+	  	 	 <app-product-card [product]="p"></app-product-card>
+			</div>
+	</div>
 </div>
