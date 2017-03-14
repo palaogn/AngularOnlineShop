@@ -1,3 +1,8 @@
-<p>
-  product-card works!
-</p>
+<div class="col-sm-2 col-md-4 productDiv" *ngIf="product">
+  <div class="middle">
+    <img [src]="product.imagePath" height="80px" width="80px"> <br>
+    <b>Nafn: </b>{{product.name}} <br>
+    <b>Verð: </b>{{product.price}} <br>
+    <button class="btn-primary" (click)="onEdit()">Breyta vöru</button>
+  </div>
+</div>

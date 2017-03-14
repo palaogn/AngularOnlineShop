@@ -1,4 +1,5 @@
-<div class="container" *ngIf="seller">
+<div class="container">
+<div *ngIf="seller">
 	<div class="row">
 		<div class="col-xs-18 col-sm-4 col-md-3">
 			<div class="productbox">
@@ -16,12 +17,10 @@
 </div>
 
 
-
-<!---
-<div class="container">
-	<h2>Products</h2>
-	<div *ngFor="let p of products">
-  	  <app-product-card [product]="p"></app-product-card>
-	</div>
+<div class="container-fluid">
+		<h2>Allar Vörur</h2>
+		<div *ngFor="let p of products">
+  	 	 <app-product-card [product]="p"></app-product-card>
+		</div>
 </div>
---->
+</div>
