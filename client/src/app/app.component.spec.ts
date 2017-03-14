@@ -2,14 +2,23 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 describe('AppComponent', () => {
+
+  var mockNgbModal = {
+    open: jasmine.createSpy("open"),
+  }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      providers: [ {
+        provide: NgbModal,
+        useValue: mockNgbModal
+      }]
     });
     TestBed.compileComponents();
   });
