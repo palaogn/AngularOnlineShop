@@ -22,6 +22,7 @@ describe('ProductDlgComponent', () => {
     fixture.detectChanges();
   });
 
+  //Successfull
   it('should create', () => {
     expect(component).toBeTruthy();
   });
