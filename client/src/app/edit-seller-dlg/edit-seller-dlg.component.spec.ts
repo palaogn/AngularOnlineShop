@@ -68,8 +68,8 @@ describe('EditSellerDlgComponent', () => {
     fixture.detectChanges();
   });
 
-  //Fails
-  /*it('should create', () => {
+
+  it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });

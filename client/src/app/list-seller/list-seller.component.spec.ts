@@ -87,8 +87,8 @@ describe('ListSellerComponent', () => {
 
   });
 
-  //Failed
-  /*describe("when sellers service returns", () => {
+
+  describe("when sellers service returns", () => {
     mockService.successGetSellers = true;
     mockService.sellersList = [];
 
@@ -99,5 +99,5 @@ describe('ListSellerComponent', () => {
       expect(compiled.querySelector('h1').textContent).toContain('No sellers to be displayed.');
     });
 
-  });*/
+  });
 });

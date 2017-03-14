@@ -73,8 +73,8 @@ describe('SellerDlgComponent', () => {
     fixture.detectChanges();
   });
 
-  //Fails
-  /*it('should create', () => {
+  
+  it('should create', () => {
     expect(component).toBeTruthy();
-  });*/
+  });
 });
