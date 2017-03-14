@@ -42,7 +42,7 @@ export class SellerDetailComponent implements OnInit {
   }
 
   onClickSaveNewSellerInfo() {
-    this.service.saveNewInfoForSeller(this.sellerId, this.newNameForSeller, this.newCategoryForProduct);
+    this.service.updateInfoForSeller(this.seller);
   }
 
   onGoBack() {

@@ -49,10 +49,20 @@ export class SellersService {
     });
   }
 
+  //  GET - /api/sellers/:id
+  //  Returns a single seller by id. Returns 404 if no such seller is found.
   getSellerById(id: number): Observable<Seller> {
     return this.http.get(`http://localhost:5000/api/sellers/${id}/`)
     .map(response => {
       return <Seller> response.json();
+    });
+  }
+
+  //  PUT - /api/sellers/:id
+  updateInfoForSeller(Seller updatedSeller): Observable<void> {
+    return this.http.put(`http://localhost:5000/api/sellers/${updatedSeller.id}/${updatedSeller}`)
+    .map(response => {
+        return response.json();
     });
   }
 
@@ -61,16 +71,6 @@ export class SellersService {
     .map(response => {
       return <Product[]> response.json();
     });
-  }
-
-  //  PUT - /api/sellers/:id
-  //  Updates seller information.
-  saveNewInfoForSeller(id: number, newName: string, newCategory: string): Observable<Seller> {
-    //   <Seller> seller = {id: id}
-    //  return this.http.put(`http://localhost:5000/api/sellers/${id}/`, seller)
-    //  .map(response => {
-    //  return <Seller> response.json();
-    //});
   }
 
 }
