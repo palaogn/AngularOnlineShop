@@ -15,7 +15,7 @@ export class SellerDetailComponent implements OnInit {
   private products: Product[];
   private product: Product;
   private newNameForSeller: string;
-  private newCategoryForProduct: string;
+  private newCategoryForSeller: string;
 
   constructor(private service: SellersService,
     private router: Router,
@@ -42,11 +42,20 @@ export class SellerDetailComponent implements OnInit {
   }
 
   onClickSaveNewSellerInfo() {
-    this.service.updateInfoForSeller(this.seller);
+      this.seller.name = this.newNameForSeller;
+      this.seller.category = this.newCategoryForSeller;
+      this.service.updateInfoForSeller(this.seller.id, this.seller).subscribe(succeeded => {
+      });
   }
 
   onGoBack() {
     this.router.navigate(['/sellers']);
+  }
+
+  onProductEdited(p: Product) {
+    console.log(p);
+    this.service.updateProduct(this.sellerId, p).subscribe(succeeded => {
+    });
   }
 
 }

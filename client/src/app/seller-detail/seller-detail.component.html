@@ -30,16 +30,19 @@
         </div>
       </div>
     </div>
+		<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
   </div>
+
 	<div class="container-fluid">
 			<h2>Allar Vörur</h2>
 			<div *ngFor="let p of products">
-	  	 	 <app-product-card [product]="p"></app-product-card>
+	  	 	 <app-product-card
+				 		[product]="p"
+						(productUpdated)="onProductEdited($event)"
+				 ></app-product-card>
 			</div>
 	</div>
 </div>
-<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
-
 
 <div class="modal fade" id="edit-seller" role="dialog">
   <div class="modal-dialog">
@@ -65,7 +68,7 @@
                 <p><b>Nýtt nafn vöruflokks:</b></p>
               </div>
               <div class="col-md-4">
-                <input name="newCategoryForProduct" [(ngModel)]="newCategoryForProduct" type="text" placeholder={{seller.category}}/>
+                <input name="newCategoryForSeller" [(ngModel)]="newCategoryForSeller" type="text" placeholder={{seller.category}}/>
               </div>
             </div>
           </div>
@@ -76,6 +79,5 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>

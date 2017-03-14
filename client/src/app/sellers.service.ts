@@ -58,18 +58,25 @@ export class SellersService {
     });
   }
 
-  //  PUT - /api/sellers/:id
-  updateInfoForSeller(Seller updatedSeller): Observable<void> {
-    return this.http.put(`http://localhost:5000/api/sellers/${updatedSeller.id}/${updatedSeller}`)
-    .map(response => {
-        return response.json();
-    });
-  }
-
   getProductsBySellerId(id: number): Observable<Product[]> {
     return this.http.get(`http://localhost:5000/api/sellers/${id}/products/`)
     .map(response => {
       return <Product[]> response.json();
+    });
+  }
+
+    updateInfoForSeller(id: number, updatedSeller: Seller): Observable<void> {
+    console.log(updatedSeller);
+    return this.http.put(`http://localhost:5000/api/sellers/${id}`, updatedSeller)
+    .map(response => {
+        response.json();
+    });
+  }
+
+  updateProduct(sellerId: number, product: Product): Observable<void> {
+    return this.http.put(`http://localhost:5000/api/sellers/${sellerId}/products/${product.id}/`, product)
+    .map(response => {
+      response.json();
     });
   }
 
