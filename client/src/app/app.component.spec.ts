@@ -3,6 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
 
@@ -12,18 +13,21 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+         RouterTestingModule
+      ],
       declarations: [
         AppComponent
       ],
       providers: [ {
         provide: NgbModal,
         useValue: mockNgbModal
-      }]
+      }],
     });
     TestBed.compileComponents();
   });
 
-  //Fails
+  //Succeeds
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
