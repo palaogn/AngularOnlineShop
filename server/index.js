@@ -122,6 +122,7 @@ app.post("/api/sellers", (req, res) => {
 });
 
 app.put("/api/sellers/:id", (req, res) => {
+  console.log("HAHAHAHA");
 	// Check if we can find the seller:
 	var seller = findSellerById(req.params.id);
 	if (!seller) {

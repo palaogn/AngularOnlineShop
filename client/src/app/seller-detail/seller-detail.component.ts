@@ -14,6 +14,8 @@ export class SellerDetailComponent implements OnInit {
   private seller: Seller;
   private products: Product[];
   private product: Product;
+  private newNameForSeller: string;
+  private newCategoryForProduct: string;
 
   constructor(private service: SellersService,
     private router: Router,
@@ -37,10 +39,6 @@ export class SellerDetailComponent implements OnInit {
       this.products = result;
     });
 
-  }
-
-  onClickOnEditSeller(sellerId) {
-    this.router.navigate(['edit', sellerId]);
   }
 
   onGoBack() {
