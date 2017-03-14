@@ -1,4 +1,4 @@
-<div class="container" *ngIf="seller">
+ <div class="container" *ngIf="seller">
 	<div class="row">
     <div class="imgthumb img-responsive">
       <div class="col-md-4">
@@ -13,7 +13,6 @@
             <p>{{seller.name}}</p>
           </div>
           <div class="col-md-4">
-            <!-- NOTE! glyphicon-edit er klasinn fyrir edit takka!-->
 					  <a (click)=onClickOnAddSeller(seller.id) class="btn btn-default btn-xs pull-right" role="button" >
               <i class="glyphicon"></i>Bæta við söluaðila</a>
 					  <a class="btn btn-default btn-xs pull-right" data-toggle="modal" data-target="#edit-seller" role="button" >
@@ -32,6 +31,21 @@
     </div>
 		<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
   </div>
+	<!---
+<div class="container">
+	<div *ngIf="seller">
+		<div>
+			<img src="{{seller.imagePath}}" alt="Image of seller" class="seller-img"/>
+			<p><b>Söluaðili: </b>{{seller.name}}</p> <br>
+			<p><b>Vöruflokkur:</b>{{seller.category}}</p> <br>
+			<a (click)=onClickOnAddSeller(seller.id) class="btn btn-default" role="button" >
+				<i class="glyphicon"></i>Bæta við söluaðila</a> <br>
+			<a class="btn btn-default" data-toggle="modal" data-target="#edit-seller" role="button" >
+				<i class="glyphicon glyphicon-edit"></i>Breyta söluaðila</a>
+			<br>
+			<button class="btn btn-default btn-back" (click)="onGoBack()">Til baka</button>
+		</div>
+</div> --->
 
 	<div class="container-fluid">
 			<h2>Allar Vörur</h2>
