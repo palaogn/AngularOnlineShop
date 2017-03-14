@@ -13,6 +13,7 @@ export class SellerDetailComponent implements OnInit {
   private sellers: Seller[];
   private seller: Seller;
   private products: Product[];
+  private topTenProducts: Product[];
   private product: Product;
   private newNameForSeller: string;
   private newCategoryForSeller: string;
@@ -38,6 +39,18 @@ export class SellerDetailComponent implements OnInit {
     this.service.getProductsBySellerId(this.sellerId).subscribe(result => {
       this.products = result;
     });
+    
+    //console.log(this.products.length);
+  /*  this.topTenProducts = this.products;
+    for(let i = this.topTenProducts.length-1; i >= 0; i--) {
+      for(let k = 1; k <= i; k++) {
+        if(this.topTenProducts[k-1].quantitySold > this.topTenProducts[k].quantitySold) {
+          let tmp = this.topTenProducts[k-1];
+          this.topTenProducts[k-1] = this.topTenProducts[k];
+          this.topTenProducts[k] = tmp;
+        }
+      }
+    }  */
 
   }
 

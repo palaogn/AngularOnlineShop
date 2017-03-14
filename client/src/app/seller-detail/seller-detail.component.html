@@ -36,10 +36,16 @@
 		  </ngb-tab>
 		  <ngb-tab title="Topp 10" id="topTenProducts">
 		    <template ngbTabTitle></template>
-		    <template ngbTabContent>Topp 10 .....
-
-
-
+		    <template ngbTabContent>
+					<div class="container-fluid">
+						<h2>Topp 10</h2>
+						<div *ngFor="let p of topTenProducts">
+							 <app-product-card
+									[product]="p"
+									(productUpdated)="onProductEdited($event)"
+							 ></app-product-card>
+						</div>
+					</div>
 		    </template>
 		  </ngb-tab>
 		</ngb-tabset>
