@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ListSellerComponent } from './list-seller.component';
+
 import { SellersService } from '../sellers.service';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,15 +12,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 describe('ListSellerComponent', () => {
 
   const mockService = {
-    successGetProducts: true,
-    productsList: [{
-      id: 1,
-      name: "test product",
-      price: 1,
-      quantitySold: 1,
-      quantityInStock: 1,
-      imagePath: "string"
-    }],
     successGetSellers: true,
     sellersList: [{
       id: 1,
