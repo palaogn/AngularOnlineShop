@@ -41,6 +41,7 @@ import { ProductDlgComponent } from './product-dlg/product-dlg.component';
     }])
   ],
   providers: [SellersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SellerDlgComponent]
 })
 export class AppModule { }
