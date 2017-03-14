@@ -47,4 +47,10 @@ export class SellerDetailComponent implements OnInit {
     this.router.navigate(['/sellers']);
   }
 
+  onProductEdited(p: Product) {
+    console.log(p);
+    this.service.updateProduct(this.sellerId, p).subscribe(succeeded => {
+    });
+  }
+
 }

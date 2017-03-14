@@ -45,4 +45,11 @@ export class SellersService {
     });
   }
 
+  updateProduct(sellerId: number, product: Product): Observable<void> {
+    return this.http.put(`http://localhost:5000/api/sellers/${sellerId}/products/${product.id}/`, product)
+    .map(response => {
+      response.json();
+    });
+  }
+
 }

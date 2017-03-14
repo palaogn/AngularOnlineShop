@@ -31,11 +31,14 @@
 			<button class="btn btn-default" (click)="onGoBack()">Til baka</button>
 		</div>
 	</div>
-	
+
 	<div class="container-fluid">
 			<h2>Allar Vörur</h2>
 			<div *ngFor="let p of products">
-	  	 	 <app-product-card [product]="p"></app-product-card>
+	  	 	 <app-product-card
+				 		[product]="p"
+						(productUpdated)="onProductEdited($event)"
+				 ></app-product-card>
 			</div>
 	</div>
 </div>
