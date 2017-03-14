@@ -2,7 +2,7 @@
 <div class="container">
   <div>
     <h2>Söluaðilar</h2>
-    <button class="button">Bæta við seljanda</button>
+    <button (click)="addSeller()" class="button">Bæta við seljanda</button>
   </div>
     <table style="width:100%">
         <tr>
@@ -14,4 +14,5 @@
           <td>{{s.category}}</td>
         </tr>
     </table>
+    <template ngbModalContainer></template>
 </div>
