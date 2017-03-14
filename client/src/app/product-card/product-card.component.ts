@@ -12,6 +12,10 @@ export class ProductCardComponent implements OnInit {
   @Input()
   product: Product;
   topTenProduct: Product;
+  productName: string;
+  productPrize: number;
+  productInStock: number;
+
 
   @Output()
   productUpdated = new EventEmitter();
@@ -21,9 +25,10 @@ export class ProductCardComponent implements OnInit {
   ngOnInit() {
   }
 
+
   onEditProduct() {
-    this.product.name = "test";
-    this.productUpdated.emit(this.product);
+    //this.product.name = "test";
+    //this.productUpdated.emit(this.product);
   }
 
 }
