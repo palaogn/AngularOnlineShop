@@ -42,6 +42,14 @@ export class SellersService {
   //  PUT - /api/sellers/:id/products/:prodId
   //  Updates product information
 
+  //  POST - /api/sellers
+  postSeller(seller: Seller): Observable<Seller[]> {
+    return this.http.post(`http://localhost:5000/api/sellers/`, seller)
+    .map(response => {
+      return <Seller[]> response.json();
+    });
+  }
+
   getSellers(): Observable<Seller[]> {
     return this.http.get('http://localhost:5000/api/sellers')
     .map(response => {
