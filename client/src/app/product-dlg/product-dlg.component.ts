@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SellersService, Product } from '../sellers.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-dlg',

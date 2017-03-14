@@ -40,7 +40,7 @@
 		    <template ngbTabContent>
 					<div class="container-fluid">
 						<h2 class="tab">Topp 10</h2>
-						<div *ngFor="let p of topTenProducts">
+						<div *ngFor="let p of products">
 							 <app-product-card
 									[product]="p"
 									(productUpdated)="onProductEdited($event)"

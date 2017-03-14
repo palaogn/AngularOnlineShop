@@ -1,3 +1,51 @@
-<p>
-  product-dlg works!
-</p>
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Búa til nýja vöru</h4>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-2">
+              <p><b>Nafn vöru:</b></p>
+            </div>
+            <div class="col-md-4">
+              <input name="sellerName" [(ngModel)]="productName" type="text" placeholder=""/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><b>Verð:</b></p>
+            </div>
+            <div class="col-md-4">
+              <input name="categoryName" [(ngModel)]="productPrize" type="number" placeholder=""/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><b>Magn seldra vara:</b></p>
+            </div>
+            <div class="col-md-4">
+              <input name="categoryName" [(ngModel)]="productQuantitySold" type="number" placeholder=""/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <p><b>Magn á lager:</b></p>
+            </div>
+            <div class="col-md-4">
+              <input name="categoryName" [(ngModel)]="productInStock" type="number" placeholder=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)=onClickSaveNewSeller() type="button" class="btn btn-default" data-dismiss="modal">Vista breytingar</button>
+      <button (click)=onGoBack() type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
