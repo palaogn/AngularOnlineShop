@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditSellerDlgComponent } from '../edit-seller-dlg/edit-seller-dlg.component';
-
+import { ProductDlgComponent } from '../product-dlg/product-dlg.component';
 
 
 @Component({
@@ -69,6 +69,19 @@ editSeller() {
       console.log(err);
   });
 }
+
+  onAddProduct() {
+    const modalInstance = this.modalService.open(ProductDlgComponent);
+    modalInstance.componentInstance.productName = 'ff';
+    modalInstance.componentInstance.sellerId = this.sellerId;
+    modalInstance.result.then(obj => {
+        console.log("Dialog was closed OK");
+        console.log(obj);
+    }).catch(err => {
+        console.log("Dialog was cancelled.");
+        console.log(err);
+    });
+  }
 
   onClickSaveNewSellerInfo() {
       this.seller.name = this.newNameForSeller;
