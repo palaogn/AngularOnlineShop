@@ -14,6 +14,8 @@ export class SellerDetailComponent implements OnInit {
   private seller: Seller;
   private products: Product[];
   private product: Product;
+  private newNameForSeller: string;
+  private newCategoryForProduct: string;
 
   constructor(private service: SellersService,
     private router: Router,
@@ -39,8 +41,8 @@ export class SellerDetailComponent implements OnInit {
 
   }
 
-  onClickOnEditSeller(sellerId) {
-    this.router.navigate(['edit', sellerId]);
+  onClickSaveNewSellerInfo() {
+    this.service.saveNewInfoForSeller(this.sellerId, this.newNameForSeller, this.newCategoryForProduct);
   }
 
   onGoBack() {
