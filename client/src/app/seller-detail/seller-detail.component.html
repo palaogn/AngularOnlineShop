@@ -13,6 +13,7 @@
 				<div class="col-md-4">
 					<p class="title">{{seller.name}}</p> <br>
 					<p><b>Vöruflokkur:  </b>{{seller.category}}</p> <br>
+					<button class="btn btn-primary" (click)="onAddProduct()">Bæta við vöru</button>
 					<br>
 				</div>
 			</div>
@@ -24,7 +25,7 @@
 		  <ngb-tab title="Allar vörur" id="fallProducts">
 		    <template ngbTabContent>
 					<div class="container-fluid">
-							<h2>Allar Vörur</h2>
+							<h2 class="tab-title">Allar Vörur</h2>
 							<div *ngFor="let p of products">
 					  	 	 <app-product-card
 								 		[product]="p"
@@ -38,7 +39,7 @@
 		    <template ngbTabTitle></template>
 		    <template ngbTabContent>
 					<div class="container-fluid">
-						<h2>Topp 10</h2>
+						<h2 class="tab-title">Topp 10</h2>
 						<div *ngFor="let p of topTenProducts">
 							 <app-product-card
 									[product]="p"
