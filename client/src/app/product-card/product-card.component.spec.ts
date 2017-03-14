@@ -22,6 +22,7 @@ describe('ProductCardComponent', () => {
     fixture.detectChanges();
   });
 
+  //Successfull
   it('should create', () => {
     expect(component).toBeTruthy();
   });
