@@ -12,6 +12,7 @@ export class SellerDlgComponent implements OnInit {
   private seller: Seller;
   private sellerName: string;
   private categoryName: string;
+  private stringId: number;
 
   constructor(private service: SellersService,
               private modalService: NgbActiveModal) { }

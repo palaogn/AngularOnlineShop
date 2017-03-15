@@ -61,6 +61,10 @@ export class SellerDetailComponent implements OnInit {
 editSeller() {
   const modalInstance = this.modalService.open(EditSellerDlgComponent);
   //modalInstance.componentInstance.sellerName = 'Gudmundur';
+  modalInstance.componentInstance.sellerName = this.seller.name;
+  modalInstance.componentInstance.categoryName = this.seller.category;
+  modalInstance.componentInstance.sellerImage = this.seller.imagePath;
+  modalInstance.componentInstance.sellerId = this.sellerId;
   modalInstance.result.then(obj => {
       console.log("Dialog was closed OK");
       console.log(obj);
@@ -98,7 +102,7 @@ editSeller() {
     this.service.updateProduct(this.sellerId, p).subscribe(succeeded => {
     });
   }
-
+/*
   onAddSeller() {
     const modalInstance = this.modalService.open(EditSellerDlgComponent);
     modalInstance.componentInstance.sellerName = this.seller.name;
@@ -112,7 +116,7 @@ editSeller() {
         console.log("Dialog was cancelled.");
         console.log(err);
     });
-  }
+  } */
 
 
 
